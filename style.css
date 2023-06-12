@@ -271,13 +271,17 @@ img, .noselect {
 	max-height: inherit;
 	max-width: inherit;
 	/* font-weight: 600; */
+
+	line-height: 1.2em;
+	font-size: 0.9em;
 }
 .btn:focus {
 	border: none;
 }
-.btn > p {
+
+/* .btn > section {
 	padding: 0 5px;
-}
+} */
 
 .btn.solid {
 	border: 2px solid var(--accent-col);
@@ -313,11 +317,6 @@ img, .noselect {
 }
 .btn.transparent:hover {
 	color: rgb(185, 185, 185);
-}
-
-.btn {
-	line-height: 1.2em;
-	font-size: 0.9em;
 }
 
 a { 
