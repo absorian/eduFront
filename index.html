@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ismagil's CV</title>
+        <link rel="icon" type="image/x-icon" href="icons/favicon.png">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="shadow">
+            <nav>
+                <a class="btn solid" href="https://aliexpress.ru/item/4001335174736.html?spm=a2g2w.home.10009201.34.75df60471LVRWc&ru_algo_pv_id=fd226260-bb57-4830-93cb-7760df2dc765&scenario=aerAppJustForYouNew&sku_id=10000015728024942&tpp_rcmd_bucket_id=343006&traffic_source=recommendation">Products</a>
+                <a class="btn transparent" href="index.html">About</a>
+            </nav>
+            <a href="index.html" class="btn transparent">
+                <img class="headerlogo" src="icons/ism_logo.png" alt="github">
+            </a>    
+        </header>
+        
+        <main id="holder">
+            <div class="main">
+                <div class="infobox shadow">
+                    <h1 class="heading" >Ismagil Iskakov</h1>
+                    <div class="content">
+                        <p>I am a professional procrastinator, but love to learn new things.
+                            What languages I know so far:
+                        </p>
+                        <ul>
+                            <li>C++</li>
+                            <li>Python</li>
+                            <li>JavaScript</li>
+                            <li>Java</li>
+                        </ul>
+                        <p>Also I want to start with Rust.</p>
+                    </div>
+                </div>
+                <div class="infobox shadow">
+                    <h1 class="heading" >Education</h1>
+                    <div class="content">
+                        <ul>
+                            <li>High school: Boarding-lycee №1, Almetevsk. ICT orientation.</li>
+                            <li>University: Innopolis University, Innopolis. Computer science and engineering.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="infobox shadow contactbox">
+                    <h1>Contacts:</h1>
+                    <div class="contactlist">
+                        <a id="gh-link" href="https://github.com/absorian" class="btn transparent">
+                            <img class="contactico" src="icons/github-mark.png" alt="github">
+                        </a>
+                        <a id="tg-link" href="https://t.me/telegram" class="btn transparent">
+                            <img class="contactico" src="icons/telegram.png" alt="github">
+                        </a>
+                        <a id="email" href="mailto:ismagil@innopolis.university" class="btn transparent">
+                            <img class="contactico" src="icons/mail.png" alt="github">
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=rAp8Xv2NTss" class="btn transparent">
+                            <img class="contactico" src="icons/linkedin-logo.png" alt="linkedIn">
+                        </a>
+                        <a href="https://www.instagram.com/ism.gallery" class="btn transparent">
+                            <img class="contactico" src="icons/Instagram-icon.png" alt="instagram">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="side">
+                <!-- <div class="spacebox"></div> -->
+                <div class="imgbox shadow">
+                    <input type="checkbox" id="bulk_bogan" class="selectimghelper"/>
+                    <label for="bulk_bogan" class="selectableimglabel">
+                        <img class="selectableimg" src="https://media.tenor.com/1roLtU6F3TYAAAAC/bulk-bogan.gif" alt="img">
+                    </label>
+                    <img class="selectableimgdouble" src="https://media.tenor.com/1roLtU6F3TYAAAAC/bulk-bogan.gif" alt="img">
+                    <p>At the office</p>
+                </div>     
+                <div class="infobox shadow">
+                    <h1 class="heading">Strengths</h1>
+                    <div class="content">
+                        <p>Large experience in googling, the overlooked eye.</p>
+                    </div>
+                </div>  
+            </div>
+        </main>
+
+        <footer class="shadow">
+
+        </footer>
+        <script>
+            window.addEventListener("scroll", toggleHeaderSticky)
+
+            const header = document.getElementsByTagName("header")[0]
+            const body = document.getElementsByTagName("body")[0]
+            let stickyOffset = 25; // margin between content and header
+
+            function toggleHeaderSticky() {
+                if (window.pageYOffset > stickyOffset) {
+                    body.classList.add("headerfix")
+                    header.classList.replace("shadow", "sticky")
+                } else {
+                    body.classList.remove("headerfix")
+                    header.classList.replace("sticky", "shadow")
+                }
+            }
+        </script>
+    </body>
+</html>

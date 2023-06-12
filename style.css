@@ -1,0 +1,326 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+/* fix for stickiness, also affects footer */
+body.headerfix {
+	height: max-content;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	--accent-col: rgb(255, 172, 70);
+    --accent-light-col: rgb(253, 201, 138);
+    --accent-darker-col: rgb(230, 158, 71);
+    --background-col: rgb(246, 246, 246);
+    --background-second-col: rgb(255, 235, 209);
+    --accent-light-tint: rgba(255, 235, 209, .6);
+
+	--round-main: 1.4em;
+	/* --main-width: 1200px; */
+	--main-width: 80em;
+
+    background-color: var(--background-col);
+	padding: 0 40px;
+	display: flex;
+  	flex-direction: column;
+}
+
+footer {
+	background-color: white;
+	/* min-height: 80px; */
+	border-radius: var(--round-main) var(--round-main) 0 0;
+
+	
+	max-width: var(--main-width);
+	margin: 0 auto;
+	width: 100%;
+	
+	padding: 20px 30px;
+	margin-top: auto;
+}
+
+header {
+	background-color: white;
+	border-radius: 0 0 var(--round-main) var(--round-main);
+	padding: 20px 30px;
+	display: flex;
+	justify-content: space-between;
+
+	max-width: var(--main-width);
+	margin: 0 auto;
+	/* this saves the expansion from outer margin */
+	width: 100%;
+
+	position: sticky; 
+	top: 0;
+	z-index: 99;
+	transition: all 250ms ease-out;
+}
+
+header.sticky {
+	box-shadow: 0 0 20px #0000001a;
+	transform: scale(1.005, 1.01);
+}
+
+header > nav {
+	margin: auto 0;
+	display: inline-block;
+}
+
+header > nav > * {
+	text-align: center;
+	margin: auto 0;
+	margin-right: 60px;
+}
+
+header > a {
+	margin-left: auto;
+}
+
+.headerlogo {
+	max-width: 3em;
+}
+
+#holder {
+	display: flex;
+	justify-content: space-between;
+	gap: 40px;
+	margin: 0 auto;
+	margin-top: 25px;
+
+	/* content block size */
+	max-width: var(--main-width);
+}
+
+.main {
+	/* flex: 1; */
+	width: 62%;
+	min-width: 500px;
+
+	/* display: flex;
+    flex-direction: column;
+	justify-content: space-between; */
+}
+
+.side {
+	width: 38%;
+	min-width: 300px;
+
+	/* prevent stretching vertically */
+	/* align-self: start;  */
+
+	display: flex;
+    flex-direction: column;
+	/* justify-content: space-between; */
+}
+
+.spacebox {
+	margin: auto 0;
+}
+
+.imgbox {
+	background-color: var(--accent-light-tint);
+	border-radius: var(--round-main);
+	margin-bottom: 25px;
+}
+.imgbox > p {
+	padding: 10px 30px;
+	padding-bottom: 20px;
+}
+.imgbox img {
+	border-radius: var(--round-main);
+	max-width: 100%;
+}
+
+.selectableimgdouble {
+	display: none;
+}
+
+.selectableimg {
+	transition: transform 250ms ease-in-out;
+
+	opacity: 1;
+}
+
+.selectableimglabel {
+	transition: opacity 250ms ease-in-out, background-color 300ms ease-in-out;
+
+	display: block;
+	border-radius: var(--round-main);
+	line-height: 0;
+}
+
+.selectimghelper {
+	display: none;
+}
+
+:not(.selectimghelper:checked) + .selectableimglabel > .selectableimg:hover {	
+	/* transform: scale(0.99, 0.99); */
+	transform: scale(1.005, 1.005);
+}
+
+:not(.selectimghelper:checked) + .selectableimglabel:hover {	
+	opacity: 0.9;
+}
+
+.selectimghelper:checked + .selectableimglabel {
+	opacity: 1;
+	
+	background-color: rgba(0, 0, 0, 0.4);
+	border-radius: 0;
+
+	transform: translate(-50%,-50%);
+	position: fixed;
+	top: 50%;
+	left: 50%;
+
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+
+	display: flex;
+}
+
+.selectimghelper:checked + .selectableimglabel > .selectableimg {
+	transform: scale(1, 1);
+
+
+	height: 80vmin;
+	width: auto;
+
+	margin: auto;
+}
+
+.selectimghelper:checked + .selectableimglabel + .selectableimgdouble {
+	display: block;
+}
+
+.infobox {
+	background-color: white;
+	border-radius: var(--round-main);
+	padding: 25px 30px;
+	margin-bottom: 25px;
+}
+
+.infobox > .heading {
+	margin-bottom: 20px;
+	/* margin-left: 15px; */
+}
+
+p {
+	white-space: pre-line;
+}
+
+ul {
+	padding: 1em 0;
+	padding-left: 2em;
+}
+
+.contactbox {
+	display: flex;
+	justify-content: space-between;
+}
+
+.contactbox > * {
+	/* display: inline-block; */
+	margin: auto 0;
+}
+
+.contactlist > * {
+	margin-left: 30px;
+}
+
+.contactico {
+	max-height: 3em;
+}
+
+:not(img).shadow {
+	box-shadow: 0px 0px 25px rgba(0,0,0,0.01);
+}
+img.shadow {
+	filter:drop-shadow(0 0 0.5em rgba(0,0,0,0.05))
+}
+
+img, .noselect {
+	/* pointer-events:fill; */
+	user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.btn {
+	text-align: center;
+	border: 0;
+	background-color: transparent;
+
+	border-radius: 35px;
+	padding: 9px 10px;
+
+	cursor: pointer;
+
+	max-height: inherit;
+	max-width: inherit;
+	/* font-weight: 600; */
+}
+.btn:focus {
+	border: none;
+}
+.btn > p {
+	padding: 0 5px;
+}
+
+.btn.solid {
+	border: 2px solid var(--accent-col);
+	color: white;
+	background-color: var(--accent-col);
+}
+.btn.solid:hover {
+	border-color: var(--accent-darker-col);
+	color: white;
+	background-color: var(--accent-darker-col);
+}
+
+.btn.inverse {
+	border: 2px solid var(--accent-col);
+	color: var(--accent-col);
+	background-color: white;
+}
+.btn.inverse:hover {
+	color: white;
+	background-color: var(--accent-col);
+}
+.btn.inverse:active {
+	border-color: var(--accent-darker-col);
+	color: white;
+	background-color: var(--accent-darker-col);
+}
+
+.btn.transparent {
+	padding: 0 0;
+
+	color: grey;
+	background-color: transparent;
+}
+.btn.transparent:hover {
+	color: rgb(185, 185, 185);
+}
+
+.btn {
+	line-height: 1.2em;
+	font-size: 0.9em;
+}
+
+a { 
+	text-decoration: none; 
+	display: inline-block;
+}
