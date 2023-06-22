@@ -1,35 +1,35 @@
-import { io } from "socket.io-client"
+// import { io } from "socket.io-client"
 
 
-const msgs = document.getElementById("msgs");
-if (msgs !== null) {
-    const socket = io("https://fwd.innopolis.university")
+// const msgs = document.getElementById("msgs");
+// if (msgs !== null) {
+//     const socket = io("https://fwd.innopolis.university")
 
-    const input_form = document.getElementById("input_form");
-    const input_msg = document.getElementById("input_msg");
+//     const input_form = document.getElementById("input_form");
+//     const input_msg = document.getElementById("input_msg");
 
-    // for (let i = 0; i < 25; i++) {
-    //     const item = document.createElement("li");
-    //     item.textContent = `Item #${i + 1}`;
-    //     msgs.appendChild(item);
-    // }    
-    msgs.scrollTo(0, msgs.scrollHeight);
+//     // for (let i = 0; i < 25; i++) {
+//     //     const item = document.createElement("li");
+//     //     item.textContent = `Item #${i + 1}`;
+//     //     msgs.appendChild(item);
+//     // }    
+//     msgs.scrollTo(0, msgs.scrollHeight);
 
-    socket.on("chat message", (msg) => {
-        console.log(msg);
-        const item = document.createElement("li");
-        item.textContent = msg;
-        msgs.appendChild(item);
-        msgs.scrollTo(0, msgs.scrollHeight);
-    })
+//     socket.on("chat message", (msg) => {
+//         console.log(msg);
+//         const item = document.createElement("li");
+//         item.textContent = msg;
+//         msgs.appendChild(item);
+//         msgs.scrollTo(0, msgs.scrollHeight);
+//     })
 
-    input_form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        if (input_msg.value.length)
-            socket.emit("chat message", input_msg.value);
-        input_msg.value = "";
-    })
-}
+//     input_form.addEventListener("submit", (e) => {
+//         e.preventDefault();
+//         if (input_msg.value.length)
+//             socket.emit("chat message", input_msg.value);
+//         input_msg.value = "";
+//     })
+// }
 
 
 
