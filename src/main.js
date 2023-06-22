@@ -1,32 +1,35 @@
 import { io } from "socket.io-client"
 
-const socket = io("https://fwd.innopolis.university")
 
 const msgs = document.getElementById("msgs");
-const input_form = document.getElementById("input_form");
-const input_msg = document.getElementById("input_msg");
+if (msgs !== null) {
+    const socket = io("https://fwd.innopolis.university")
 
-// for (let i = 0; i < 25; i++) {
-//     const item = document.createElement("li");
-//     item.textContent = `Item #${i + 1}`;
-//     msgs.appendChild(item);
-// }    
-msgs.scrollTo(0, msgs.scrollHeight);
+    const input_form = document.getElementById("input_form");
+    const input_msg = document.getElementById("input_msg");
 
-socket.on("chat message", (msg) => {
-    console.log(msg);
-    const item = document.createElement("li");
-    item.textContent = msg;
-    msgs.appendChild(item);
+    // for (let i = 0; i < 25; i++) {
+    //     const item = document.createElement("li");
+    //     item.textContent = `Item #${i + 1}`;
+    //     msgs.appendChild(item);
+    // }    
     msgs.scrollTo(0, msgs.scrollHeight);
-})
 
-input_form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    if (input_msg.value.length)
-        socket.emit("chat message", input_msg.value);
-    input_msg.value = "";
-})
+    socket.on("chat message", (msg) => {
+        console.log(msg);
+        const item = document.createElement("li");
+        item.textContent = msg;
+        msgs.appendChild(item);
+        msgs.scrollTo(0, msgs.scrollHeight);
+    })
+
+    input_form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (input_msg.value.length)
+            socket.emit("chat message", input_msg.value);
+        input_msg.value = "";
+    })
+}
 
 
 
