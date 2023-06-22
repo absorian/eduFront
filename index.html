@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>Ismagil's CV</title>
+        <title>Ismagil's playground</title>
         <link rel="icon" type="image/x-icon" href="icons/favicon.png">
         <link rel="stylesheet" href="style.css">
     </head>
@@ -18,7 +18,7 @@
         
         <main id="holder">
             <div class="main">
-                <div class="infobox shadow">
+                <!-- <div class="infobox shadow">
                     <h1 class="heading" >Ismagil Iskakov</h1>
                     <div class="content">
                         <p>I am a professional procrastinator, but love to learn new things.
@@ -32,8 +32,8 @@
                         </ul>
                         <p>Also I want to start with Rust.</p>
                     </div>
-                </div>
-                <div class="infobox shadow">
+                </div> -->
+                <!-- <div class="infobox shadow">
                     <h1 class="heading" >Education</h1>
                     <div class="content">
                         <ul>
@@ -41,51 +41,65 @@
                             <li>University: Innopolis University, Innopolis. Computer science and engineering.</li>
                         </ul>
                     </div>
-                </div>
-                <div class="infobox shadow contactbox">
-                    <h1>Contacts:</h1>
-                    <div class="contactlist">
-                        <a id="gh-link" href="https://github.com/absorian" class="btn transparent">
-                            <img class="contactico" src="icons/github-mark.png" alt="github">
-                        </a>
-                        <a id="tg-link" href="https://t.me/telegram" class="btn transparent">
-                            <img class="contactico" src="icons/telegram.png" alt="github">
-                        </a>
-                        <a id="email" href="mailto:ismagil@innopolis.university" class="btn transparent">
-                            <img class="contactico" src="icons/mail.png" alt="github">
-                        </a>
-                        <a href="https://www.youtube.com/watch?v=rAp8Xv2NTss" class="btn transparent">
-                            <img class="contactico" src="icons/linkedin-logo.png" alt="linkedIn">
-                        </a>
-                        <a href="https://www.instagram.com/ism.gallery" class="btn transparent">
-                            <img class="contactico" src="icons/Instagram-icon.png" alt="instagram">
-                        </a>
+                </div> -->
+                <div class="infobox shadow">
+                    <h1 class="heading">Comic picture</h1>
+                    <button id="comicrefresh" class="btn inverse">Refresh</button>
+                    <p id="comicdate"></p>
+                    <div class="imgbox shadow">
+                        <input type="checkbox" id="comic" class="selectimghelper">
+                        <label for="comic" class="selectableimglabel">
+                            <img class="selectableimg" src="images/placeholder.png" alt="placeholder">
+                        </label>
+                        <img class="selectableimgdouble" src="images/placeholder.png" alt="placeholder duplicate">
+                        <p></p>
                     </div>
                 </div>
             </div>
 
             <div class="side">
                 <!-- <div class="spacebox"></div> -->
-                <div class="imgbox shadow">
-                    <input type="checkbox" id="bulk_bogan" class="selectimghelper"/>
-                    <label for="bulk_bogan" class="selectableimglabel">
-                        <img class="selectableimg" src="https://media.tenor.com/1roLtU6F3TYAAAAC/bulk-bogan.gif" alt="img">
-                    </label>
-                    <img class="selectableimgdouble" src="https://media.tenor.com/1roLtU6F3TYAAAAC/bulk-bogan.gif" alt="img">
-                    <p>At the office</p>
-                </div>     
+                    <!-- <div class="infobox shadow">
+                        <h1 class="heading">Strengths</h1>
+                        <div class="content">
+                            <p>Large experience in googling, the overlooked eye.</p>
+                        </div>
+                    </div>   -->
                 <div class="infobox shadow">
-                    <h1 class="heading">Strengths</h1>
-                    <div class="content">
-                        <p>Large experience in googling, the overlooked eye.</p>
-                    </div>
-                </div>  
+                    <h1 class="heading">Messages</h1>
+                    <ul id="msgs" class="msgbox">
+                    </ul>
+                </div>
+                <div class="infobox shadow">
+                    <form id="input_form">
+                        <input type="text" id="input_msg">
+                        <button type="submit" class="btn solid">send</button>
+                    </form>
+                </div>
             </div>
         </main>
 
         <footer class="shadow">
-
+            <h1>Contacts:</h1>
+            <div class="contactlist">
+                <a id="gh-link" href="https://github.com/absorian" class="btn transparent">
+                    <img class="contactico" src="icons/github-mark.png" alt="github">
+                </a>
+                <a id="tg-link" href="https://t.me/telegram" class="btn transparent">
+                    <img class="contactico" src="icons/telegram.png" alt="github">
+                </a>
+                <a id="email" href="mailto:ismagil@innopolis.university" class="btn transparent">
+                    <img class="contactico" src="icons/mail.png" alt="github">
+                </a>
+                <a href="https://www.youtube.com/watch?v=6fRsreqo8tA" class="btn transparent">
+                    <img class="contactico" src="icons/linkedin-logo.png" alt="linkedIn">
+                </a>
+                <a href="https://www.instagram.com/ism.gallery" class="btn transparent">
+                    <img class="contactico" src="icons/Instagram-icon.png" alt="instagram">
+                </a>
+            </div>
         </footer>
+
         <script>
             window.addEventListener("scroll", toggleHeaderSticky)
 
@@ -103,5 +117,6 @@
                 }
             }
         </script>
+        <script type="module" src="./dist/bundle.js"></script>
     </body>
 </html>
