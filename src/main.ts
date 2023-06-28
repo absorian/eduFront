@@ -65,44 +65,46 @@ class SelectableImage {
     }
 }
 
-const my_email = "i.iskakov@innopolis.university";
+if (document.getElementById("comic") !== null) {
+    const my_email = "i.iskakov@innopolis.university";
 
-const comic_url = new URL("https://fwd.innopolis.university/api/comic");
-const hw2_url = new URL("https://fwd.innopolis.university/api/hw2");
-const hw2_params = new URLSearchParams([["email", my_email]]).toString();
+    const comic_url = new URL("https://fwd.innopolis.university/api/comic");
+    const hw2_url = new URL("https://fwd.innopolis.university/api/hw2");
+    const hw2_params = new URLSearchParams([["email", my_email]]).toString();
 
-let comic_img = new SelectableImage("comic");
-const comic_refresh_btn = document.getElementById("comicrefresh") as HTMLButtonElement;
-const comic_date = document.getElementById("comicdate") as HTMLParagraphElement;
+    let comic_img = new SelectableImage("comic");
+    const comic_refresh_btn = document.getElementById("comicrefresh") as HTMLButtonElement;
+    const comic_date = document.getElementById("comicdate") as HTMLParagraphElement;
 
-request_comic_id();
-comic_refresh_btn.addEventListener("click", request_comic_id);
+    request_comic_id();
+    comic_refresh_btn.addEventListener("click", request_comic_id);
 
-function request_comic_id() {
-    fetch(`${hw2_url.origin}${hw2_url.pathname}?${hw2_params}`, { method: "GET" })
-    .then((response) => response.text())
-    .then((res) => {
-        console.log(`Retrieved id: ${res}`);
-        request_comic(res);
-    }).catch((err) => {
-        console.log(`Error on getting the Comic ID: ${err}`);
-    })
-}
+    function request_comic_id() {
+        fetch(`${hw2_url.origin}${hw2_url.pathname}?${hw2_params}`, { method: "GET" })
+        .then((response) => response.text())
+        .then((res) => {
+            console.log(`Retrieved id: ${res}`);
+            request_comic(res);
+        }).catch((err) => {
+            console.log(`Error on getting the Comic ID: ${err}`);
+        })
+    }
 
-// async
-function request_comic(id: string) {
-    fetch(`${comic_url.origin}${comic_url.pathname}?${new URLSearchParams([["id", id]]).toString()}`, { method: "GET" })
-    .then((response) => response.json())
-    .then((res) => {
-        console.log(`Retrieved comic:`);
-        console.log(res);
-        
-        comic_img.setImage(res.img, res.alt);
-        comic_img.setTitle(res.safe_title);
+    // async
+    function request_comic(id: string) {
+        fetch(`${comic_url.origin}${comic_url.pathname}?${new URLSearchParams([["id", id]]).toString()}`, { method: "GET" })
+        .then((response) => response.json())
+        .then((res) => {
+            console.log(`Retrieved comic:`);
+            console.log(res);
+            
+            comic_img.setImage(res.img, res.alt);
+            comic_img.setTitle(res.safe_title);
 
-        comic_date.textContent = `Published ${formatDistanceToNow(new Date(res.year, res.month, res.day))} ago`;
-    })
-    .catch((err) => {
-        console.log(`Error on getting the Comic: ${err}`);
-    })
+            comic_date.textContent = `Published ${formatDistanceToNow(new Date(res.year, res.month, res.day))} ago`;
+        })
+        .catch((err) => {
+            console.log(`Error on getting the Comic: ${err}`);
+        })
+    }
 }
