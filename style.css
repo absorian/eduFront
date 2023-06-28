@@ -351,11 +351,15 @@ a {
 }
 
 
-#input_msg {
+#input_msg, #input_username {
 	border: solid 1px;
 	border-radius: var(--round-main);
 	padding: 0.7em;
 	margin-right: 15px;
+}
+
+#input_username {
+	margin-bottom: 10px;
 }
 
 #comic + .selectableimglabel > .selectableimg, #comic + .selectableimglabel + .selectableimgdouble {

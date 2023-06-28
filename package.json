@@ -2,12 +2,13 @@
   "name": "edufront",
   "version": "1.0.0",
   "description": "Playground",
-  "main": "main.js",  
+  "main": "main.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup --config rollup.config.js",
-    "watch": "rollup --watch --config rollup.config.js"
+    "watch": "rollup --watch --config rollup.config.js",
+    "tsc": "tsc"
   },
   "repository": {
     "type": "git",
@@ -17,10 +18,14 @@
   "license": "GNU GPL v3",
   "dependencies": {
     "@rollup/plugin-node-resolve": "^15.1.0",
+    "date-fns": "^2.30.0",
     "socket.io-client": "^4.6.2"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.3",
-    "rollup": "^3.25.1"
+    "@rollup/plugin-typescript": "^11.1.1",
+    "rollup": "^3.25.1",
+    "tslib": "^2.5.3",
+    "typescript": "^5.1.3"
   }
 }
