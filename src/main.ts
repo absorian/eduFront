@@ -85,12 +85,12 @@ if (document.getElementById("comic") !== null) {
         .then((res) => {
             console.log(`Retrieved id: ${res}`);
             request_comic(res);
-        }).catch((err) => {
-            console.log(`Error on getting the Comic ID: ${err}`);
         })
+        // .catch((err) => {
+        //     console.log(`Error on getting the Comic ID: ${err}`);
+        // })
     }
 
-    // async
     function request_comic(id: string) {
         fetch(`${comic_url.origin}${comic_url.pathname}?${new URLSearchParams([["id", id]]).toString()}`, { method: "GET" })
         .then((response) => response.json())
@@ -103,8 +103,8 @@ if (document.getElementById("comic") !== null) {
 
             comic_date.textContent = `Published ${formatDistanceToNow(new Date(res.year, res.month, res.day))} ago`;
         })
-        .catch((err) => {
-            console.log(`Error on getting the Comic: ${err}`);
-        })
+        // .catch((err) => {
+        //     console.log(`Error on getting the Comic: ${err}`);
+        // })
     }
 }
