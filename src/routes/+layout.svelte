@@ -13,10 +13,10 @@
 		<nav>
 			<Button appearence="solid" href="https://www.youtube.com/watch?v=eLYhnBaWOzc">Products</Button
 			>
-			<Button appearence="transparent" href="/messenger">Messenger</Button>
-			<Button appearence="transparent" href="/comic">Comic</Button>
+			<Button appearence="transparent" href="./messenger">Messenger</Button>
+			<Button appearence="transparent" href="./comic">Comic</Button>
 		</nav>
-		<Button href="/" appearence="transparent">
+		<Button href="./" appearence="transparent">
 			<img class="headerlogo" src="/icons/ism_logo.png" alt="logo" />
 		</Button>
 	</div>
