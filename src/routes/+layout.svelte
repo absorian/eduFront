@@ -1,4 +1,5 @@
 <script>
+	import { base } from "$app/paths";
 	import Button from '$lib/Button.svelte';
 
 	const stickyOffset = 25; // space between content and header
@@ -13,11 +14,11 @@
 		<nav>
 			<Button appearence="solid" href="https://www.youtube.com/watch?v=eLYhnBaWOzc">Products</Button
 			>
-			<Button appearence="transparent" href="./messenger">Messenger</Button>
-			<Button appearence="transparent" href="./comic">Comic</Button>
+			<Button appearence="transparent" href="{base}/messenger">Messenger</Button>
+			<Button appearence="transparent" href="{base}/comic">Comic</Button>
 		</nav>
-		<Button href="./" appearence="transparent">
-			<img class="headerlogo" src="./icons/ism_logo.png" alt="logo" />
+		<Button href="{base}/" appearence="transparent">
+			<img class="headerlogo" src="{base}/icons/ism_logo.png" alt="logo" />
 		</Button>
 	</div>
 </header>
@@ -29,19 +30,19 @@
 
 	<footer class="shadow">
 		<Button appearence="transparent" href="https://github.com/absorian">
-			<img id="gh-link" class="contactico" src="./icons/github-mark.png" alt="github" />
+			<img id="gh-link" class="contactico" src="{base}/icons/github-mark.png" alt="github" />
 		</Button>
 		<Button appearence="transparent" href="https://t.me/telegram">
-			<img id="tg-link" class="contactico" src="./icons/telegram.png" alt="telegram" />
+			<img id="tg-link" class="contactico" src="{base}/icons/telegram.png" alt="telegram" />
 		</Button>
 		<Button appearence="transparent" href="mailto:ismagil@innopolis.university">
-			<img id="email" class="contactico" src="./icons/mail.png" alt="email" />
+			<img id="email" class="contactico" src="{base}/icons/mail.png" alt="email" />
 		</Button>
 		<Button appearence="transparent" href="https://www.youtube.com/watch?v=y7r6PAkFRfU">
-			<img class="contactico" src="./icons/linkedin-logo.png" alt="linkedIn" />
+			<img class="contactico" src="{base}/icons/linkedin-logo.png" alt="linkedIn" />
 		</Button>
 		<Button appearence="transparent" href="https://www.instagram.com/ism.gallery">
-			<img class="contactico" src="./icons/Instagram-icon.png" alt="instagram" />
+			<img class="contactico" src="{base}/icons/Instagram-icon.png" alt="instagram" />
 		</Button>
 	</footer>
 </div>
