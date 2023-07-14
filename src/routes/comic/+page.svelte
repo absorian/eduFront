@@ -57,6 +57,11 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Comic</title>
+	<meta name="description" content="Getting (random) single comic from university api">
+</svelte:head>
+
 <ColumnTable
 	sizes={[
 		{ percentage: 62, min_size: '500px' },
