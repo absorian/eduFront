@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href="%sveltekit.assets%/icons/favicon.png" />
+	<link rel="icon" href="{base}/icons/favicon.png" />
 	<meta name="author" content="Ismagil Iskakov">
 </svelte:head>
 
