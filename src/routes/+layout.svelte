@@ -17,7 +17,7 @@
 <header>
 	<div class="headercontent {scrollPos > stickyOffset ? 'sticky' : 'shadow'}">
 		<nav>
-			<Button appearence="solid" href="https://www.youtube.com/watch?v=eLYhnBaWOzc">Products</Button
+			<Button appearence="solid" href="https://www.youtube.com/watch?v=AXBDaeF97Ms">Education</Button
 			>
 			<Button appearence="transparent" href="{base}/messenger">Messenger</Button>
 			<Button appearence="transparent" href="{base}/comic">Comic</Button>
