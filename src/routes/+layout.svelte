@@ -7,6 +7,11 @@
 	let scrollPos = 0;
 </script>
 
+<svelte:head>
+	<link rel="icon" href="%sveltekit.assets%/icons/favicon.png" />
+	<meta name="author" content="Ismagil Iskakov">
+</svelte:head>
+
 <svelte:window bind:scrollY={scrollPos} />
 
 <header>

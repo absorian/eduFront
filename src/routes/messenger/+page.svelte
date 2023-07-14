@@ -57,6 +57,11 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Messenger</title>
+	<meta name="description" content="Simple messenger built using socket.io">
+</svelte:head>
+
 <ColumnTable
 	sizes={[
 		{ percentage: 62, min_size: '38vw' },

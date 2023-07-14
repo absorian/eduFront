@@ -4,6 +4,11 @@
 	import ColumnTable from '$lib/ColumnTable.svelte';
 </script>
 
+<svelte:head>
+	<title>About</title>
+	<meta name="description" content="Author description">
+</svelte:head>
+
 <ColumnTable sizes={[{ percentage: 62 }, { percentage: 38 }]}>
 	<div slot="1">
 		<Box shadow>
